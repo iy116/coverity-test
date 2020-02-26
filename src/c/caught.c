@@ -45,19 +45,14 @@ void wrongMallocSize() {
   free(a);
 }
 
-void memLeak() {
-  char *a = malloc(5);
-}
-
 int main() {
   bufferOverflow();
   intOverflow();
   nullDeref();
+  outOfBounds();
   uninitPtrWrite();
   useAfterFree();
   wrongMallocSize();
-  memLeak();
-  outOfBounds();
 
   return 0;
 }
