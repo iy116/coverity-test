@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void memLeak1() {
+// Memory leak.
+void memLeak() {
   char *a = malloc(5);
 }
 
-char * memLeak2() {
+// No memory leak.
+char * noMemLeak() {
   char *a = malloc(5);
   return a;
 }
 
 int main() {
-  memLeak1();
-  memLeak2();
+  memLeak();
+  noMemLeak();
 
   return 0;
 }
