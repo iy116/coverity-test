@@ -11,7 +11,6 @@ void bufferOverflow() {
 void intOverflow() {
     int a = 2147483647;
     a = a + 1;
-    printf("%d\n", a);
 }
 
 void nullDeref() {
@@ -24,13 +23,6 @@ void outOfBounds() {
   arr[5] = 999;
 }
 
-  // Not caught.
-void outOfBounds2() {
-  int *a = (int *)malloc(2 * sizeof(int));
-  a[9] = 999;
-  free(a);
-}
-
 void uninitPtrWrite() {
   int *a;
   a[1] = 1;
@@ -38,7 +30,13 @@ void uninitPtrWrite() {
 
 void useAfterFree() {
   int *a = malloc(256);
+
   free(a);
+
+  int x = 1;
+  int y = 2;
+  int z = 3;
+
   a[1] = 1;
 }
 
@@ -60,7 +58,6 @@ int main() {
   wrongMallocSize();
   memLeak();
   outOfBounds();
-  outOfBounds2();
 
   return 0;
 }
