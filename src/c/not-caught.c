@@ -13,7 +13,8 @@ void intOverflow() {
     printf("%d", a);
 }
 
-void outOfBounds3(int i) {
+// Dynamic input.
+void dynamicInputOutOfBounds(int i) {
   int arr[2];
   arr[i * i + 10] = 999;
 }
@@ -22,7 +23,7 @@ void outOfBounds3(int i) {
 int main() {
   outOfBounds2();
   intOverflow();
-  outOfBounds3(1);
+  dynamicInputOutOfBounds(1);
 
   return 0;
 }
