@@ -13,12 +13,7 @@ void intOverflow() {
     printf("%d", a);
 }
 
-void outOfBounds3() {
-  int arr[2];
-  arr[rand() + 10] = 999;
-}
-
-void outOfBounds4(int i) {
+void outOfBounds3(int i) {
   int arr[2];
   arr[i * i + 10] = 999;
 }
@@ -27,8 +22,7 @@ void outOfBounds4(int i) {
 int main() {
   outOfBounds2();
   intOverflow();
-  outOfBounds3();
-  outOfBounds4(1);
+  outOfBounds3(1);
 
   return 0;
 }
