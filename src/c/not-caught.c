@@ -7,6 +7,12 @@ void outOfBounds2() {
   free(a);
 }
 
+void intOverflow() {
+    int a = 2147483647;
+    a = a + 1;
+    printf("%d", a);
+}
+
 void outOfBounds3() {
   int arr[2];
   arr[rand() + 10] = 999;
@@ -20,6 +26,7 @@ void outOfBounds4(int i) {
 
 int main() {
   outOfBounds2();
+  intOverflow();
   outOfBounds3();
   outOfBounds4(1);
 

@@ -8,10 +8,6 @@ void bufferOverflow() {
   strcpy(buffer, c);
 }
 
-void intOverflow() {
-    int a = 2147483647;
-    a = a + 1;
-}
 
 void nullDeref() {
   int *a = NULL;
@@ -47,7 +43,6 @@ void wrongMallocSize() {
 
 int main() {
   bufferOverflow();
-  intOverflow();
   nullDeref();
   outOfBounds();
   uninitPtrWrite();
